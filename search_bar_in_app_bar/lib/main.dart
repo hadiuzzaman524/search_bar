@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'items.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,28 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final items = AllItems();
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        child: ListView.builder(
-          itemBuilder: (ctx, index) {
-           return Column(
-             children: [
-               ListTile(
-                  title: Text(items.getList[index].name),
-                  subtitle: Text(items.getList[index].id),
-                ),
-               Divider(
-                 
-               )
-             ],
-           );
-          },
-          itemCount: items.getList.length,
-        ),
-      ),
+    return MaterialApp(
+     theme: ThemeData(
+       primaryColor: Colors.blue,
+     ),
+      home: HomePage(),
     );
   }
 }
